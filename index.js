@@ -35,7 +35,7 @@ app.post('/register', async function(req, res){
         res.redirect('./success');
         }
         else{
-            alert("User aalready registered");
+            console.log("User aalready registered");
             res.redirect('./error');
         }
         res.redirect('./success');
