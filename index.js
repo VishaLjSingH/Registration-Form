@@ -40,13 +40,13 @@ app.post('/register', async function(req, res){
         }
         const registrationData = new Registration({name,email,password})
         await registrationData.save();
-        res.redirect('./sucess');
+        res.redirect('./success');
     } catch(error){
         console.log(error);
         res.redirect('./error');
     }
 });
-app.get('/sucess', function(req, res){
+app.get('/success', function(req, res){
     res.sendFile(__dirname +'/pages/success.html');
 });
 app.get('/error', function(req, res){
