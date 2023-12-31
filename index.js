@@ -32,10 +32,10 @@ app.post('/register', async function(req, res){
         if(!existingUser){
             const registrationData = new Registration({name,email,password})
         await registrationData.save();
-        res.redirect('./sucess');
+        res.redirect('./success');
         }
         else{
-            alert("User aalready registered");
+            console.log("User aalready registered");
             res.redirect('./error');
         }
         const registrationData = new Registration({name,email,password})
