@@ -30,7 +30,7 @@ app.post('/register', async function(req, res){
         const {name,email,password} = req.body;
         const existingUser = await Registration.findOne({email: email})
         if(!existingUser){
-            const registrationData = new Registration({name,email,password})
+            const registrationData = new Registration({name,email,password});
         await registrationData.save();
         res.redirect('./success');
         }
@@ -38,7 +38,6 @@ app.post('/register', async function(req, res){
             console.log("User aalready registered");
             res.redirect('./error');
         }
-        res.redirect('./success');
     } catch(error){
         console.log(error);
         res.redirect('./error');
